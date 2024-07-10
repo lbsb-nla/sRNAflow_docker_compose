@@ -1,0 +1,17 @@
+services:
+  srnaflow:
+    image: ghcr.io/zajakin/srnaflow
+    ports:
+      - "3838:3838"
+    volumes:
+      - ./sRNAflow:/srv/shiny-server/www
+    restart: unless-stopped
+
+
+volumes:
+  sRNAflow:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${FASTQ_FILES_DIR}
