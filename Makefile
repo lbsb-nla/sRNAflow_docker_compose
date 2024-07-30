@@ -14,3 +14,10 @@ up:
 
 stop:
 	$(DC_BIN) stop
+
+down:
+	$(DC_BIN) down
+
+restart: stop up
+
+r: restart
